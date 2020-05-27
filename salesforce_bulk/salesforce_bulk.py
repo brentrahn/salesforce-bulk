@@ -172,6 +172,9 @@ class SalesforceBulk(object):
 
     def create_delete_job(self, object_name, **kwargs):
         return self.create_job(object_name, "delete", **kwargs)
+    
+    def create_hard_delete_job(self, object_name, **kwargs):
+        return self.create_job(object_name, "hardDelete", **kwargs)
 
     def create_job(self, object_name=None, operation=None, contentType='CSV',
                    concurrency=None, external_id_name=None, pk_chunking=False):
